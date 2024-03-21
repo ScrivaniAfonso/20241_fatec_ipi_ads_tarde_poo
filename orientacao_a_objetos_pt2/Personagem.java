@@ -1,9 +1,26 @@
 public class Personagem{
     //variáveis de instância
     String nome;
-    int energia = 10;
-    int fome = 0;
-    int sono = 0;
+    private int energia = 10;
+    private int fome = 0;
+    private int sono = 0;
+
+    //esse é o construtor padrão
+    //criado automaticamente pelo compilador, ainda que não seja escrito explicitamente
+    Personagem() {
+
+    }
+
+    //construtor personalizado
+    //o que viabiliza sua existência é a sobrecarga de construtores
+    Personagem(int energia, int fome, int sono) {
+        if (energia >= 0 && energia <= 10)
+            this.energia = energia;
+        if (fome >= 0 && fome <=10)
+            this.fome = fome;
+        if (sono >= 0 && fome <=10)
+            this.sono = sono;
+    }
 
     void cacar() {
         if(energia >= 2){
